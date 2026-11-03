@@ -1,0 +1,40 @@
+{
+ "version": "2026-11-04.5",
+ "content": "91845cb544ff5712c4e114b4ac928ee9e5365972",
+ "files": [
+  {
+   "path": ".claude/settings.json",
+   "sha1": "a5f001a4d688a87ea6564f7d58392087feb4b924"
+  },
+  {
+   "path": "Assets/Editor/ErrorCapture.cs",
+   "sha1": "bf4b5faa1ce66ea1ecf8540b0e96524a35cc4fc6"
+  },
+  {
+   "path": "Assets/Editor/Submit/SubmitTool.cs",
+   "sha1": "5f301414844758f8dca2c95a59a10ce8490d6498"
+  },
+  {
+   "path": "Assets/Editor/Submit/TutorUpdate.cs",
+   "sha1": "1df0820def9e6d2a48222494b6d2619eaefead83"
+  },
+  {
+   "path": "Assets/Editor/Tutor/PlayCheck.cs",
+   "sha1": "0e7d386a8b8af8483f6f12fd282836468c255180"
+  },
+  {
+   "path": "CLAUDE.md",
+   "sha1": "962bbc8e6b0742ec442ae5f7252134f128acd209"
+  },
+  {
+   "path": "syllabus.md",
+   "sha1": "26234c87a198ca83b42b66ce376de83e3199b31a"
+  }
+ ],
+ "history": [
+  {
+   "version": "2026-11-04.5",
+   "published": "2026-11-04T03:09:04+09:00"
+  }
+ ]
+}
