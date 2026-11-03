@@ -179,12 +179,13 @@ namespace ClassSubmit
                     "「" + VerdictOk + "」 이 될 때까지 고치고 튜터 면담을 다시 받는다.", "확인");
                 return null;
             }
-            hw.AssignPath = Path.Combine(root, AssignDir, hw.Name + ".md");
-            if (!File.Exists(hw.AssignPath))
+            hw.AssignPath = FindAssignment(root, hw.Name);
+            if (hw.AssignPath == null)
             {
                 EditorUtility.DisplayDialog("과제 제출",
-                    "과제 파일이 없다: " + AssignDir + "\\" + hw.Name + ".md\n\n" +
-                    "디스코드 #과제 에서 " + hw.Name + ".md 를 받아 프로젝트 폴더의 " + AssignDir + " 폴더에 넣는다.", "확인");
+                    "과제 파일이 없다 (" + AssignDir + " 폴더에 첫 줄이 「# " + hw.Name + "」 인 .md).\n\n" +
+                    "디스코드 #과제 에서 " + hw.Name + " 의 과제 파일(첨부 .md)을 받아 프로젝트 폴더의 " + AssignDir + " 폴더에 넣는다.\n" +
+                    "파일 이름은 바꾸지 않아도 된다.", "확인");
                 return null;
             }
             string changed = ScriptChangedAfter(root, Path.Combine(root, "Assets"), hw.InterviewTime.AddSeconds(2));
@@ -196,6 +197,35 @@ namespace ClassSubmit
                 return null;
             }
             return hw;
+        }
+
+        // 과제 폴더의 .md 중 첫 제목 줄이 「# 과제1 — …」 인 것. 디스코드가 첨부 이름의 한글을 지워 「1.md」 가 되고,
+        // 다시 받으면 「과제1 (1).md」 가 되므로 이름이 아니라 내용으로 찾는다. 여러 개면 가장 최근 것
+        static string FindAssignment(string root, string name)
+        {
+            string dir = Path.Combine(root, AssignDir);
+            if (!Directory.Exists(dir)) return null;
+            string best = null;
+            foreach (var f in Directory.GetFiles(dir, "*.md"))
+            {
+                string head = null;
+                try
+                {
+                    foreach (var raw in File.ReadLines(f))
+                    {
+                        var line = raw.Trim().TrimStart('﻿');
+                        if (line.Length == 0) continue;
+                        head = line;
+                        break;
+                    }
+                }
+                catch { continue; }
+                if (head == null || !head.StartsWith("# ")) continue;
+                var first = head.Substring(2).Replace("`", "").Split(new[] { ' ', '\t', '—', '–' }, StringSplitOptions.RemoveEmptyEntries);
+                if (first.Length == 0 || first[0] != name) continue;
+                if (best == null || File.GetLastWriteTime(f) > File.GetLastWriteTime(best)) best = f;
+            }
+            return best;
         }
 
         static bool TutorInstalled(string root)

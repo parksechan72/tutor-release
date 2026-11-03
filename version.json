@@ -1,6 +1,6 @@
 {
- "version": "2026-11-04.6",
- "content": "2aa3da31e9aaa86a99fc095067d07938fb99742b",
+ "version": "2026-11-04.7",
+ "content": "0b601230d9405597ad46371a949d44a2f97a6627",
  "files": [
   {
    "path": ".claude/settings.json",
@@ -12,7 +12,7 @@
   },
   {
    "path": "Assets/Editor/Submit/SubmitTool.cs",
-   "sha1": "5f301414844758f8dca2c95a59a10ce8490d6498"
+   "sha1": "111d1053b4df3f2b7cec6e4ca8ba7e56e2c1ecbf"
   },
   {
    "path": "Assets/Editor/Submit/TutorUpdate.cs",
@@ -24,7 +24,7 @@
   },
   {
    "path": "CLAUDE.md",
-   "sha1": "f4fa3291831e48e9c301825229cb132bce6eccfb"
+   "sha1": "de175710bacf62327947a0fe52cb96402f6ce915"
   },
   {
    "path": "syllabus.md",
@@ -39,6 +39,10 @@
   {
    "version": "2026-11-04.6",
    "published": "2026-11-04T03:20:06+09:00"
+  },
+  {
+   "version": "2026-11-04.7",
+   "published": "2026-11-04T03:49:16+09:00"
   }
  ]
 }
