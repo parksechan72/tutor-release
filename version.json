@@ -1,6 +1,6 @@
 {
- "version": "2026-11-04.5",
- "content": "91845cb544ff5712c4e114b4ac928ee9e5365972",
+ "version": "2026-11-04.6",
+ "content": "2aa3da31e9aaa86a99fc095067d07938fb99742b",
  "files": [
   {
    "path": ".claude/settings.json",
@@ -16,7 +16,7 @@
   },
   {
    "path": "Assets/Editor/Submit/TutorUpdate.cs",
-   "sha1": "1df0820def9e6d2a48222494b6d2619eaefead83"
+   "sha1": "86246c90629e1ea7a688c5fc668ba3113ce8d4a6"
   },
   {
    "path": "Assets/Editor/Tutor/PlayCheck.cs",
@@ -24,7 +24,7 @@
   },
   {
    "path": "CLAUDE.md",
-   "sha1": "962bbc8e6b0742ec442ae5f7252134f128acd209"
+   "sha1": "f4fa3291831e48e9c301825229cb132bce6eccfb"
   },
   {
    "path": "syllabus.md",
@@ -35,6 +35,10 @@
   {
    "version": "2026-11-04.5",
    "published": "2026-11-04T03:09:04+09:00"
+  },
+  {
+   "version": "2026-11-04.6",
+   "published": "2026-11-04T03:20:06+09:00"
   }
  ]
 }

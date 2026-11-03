@@ -19,7 +19,7 @@ namespace ClassSubmit
     {
         // tools/build-tutor-package.py 가 학생 배포본을 만들 때 주소를 채운다.
         // 교재 개발용 프로젝트(이 저장소)에서는 비어 있어서 아무것도 확인하지 않는다
-        const string ReleaseRaw = "https://raw.githubusercontent.com/Nichi72/tutor-release/main/";
+        const string ReleaseRaw = "https://raw.githubusercontent.com/parksechan72/tutor-release/main/";
         const int TimeoutSeconds = 15;
 
         static readonly Regex VersionLine = new Regex(@"튜터 버전[:：]\s*([0-9]{4}-[0-9]{2}-[0-9]{2}\.[0-9]+)");
